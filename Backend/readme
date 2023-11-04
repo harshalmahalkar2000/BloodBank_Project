@@ -1,0 +1,95 @@
+Backend set up packages
+1-npm init
+  The npm init command is a step-by-step tool to scaffold out your project. It will prompt you for input for a few aspects of the project in the following order:
+
+  The project's name,
+  The project's initial version,
+  The project's description,
+  The project's entry point (meaning the project's main file),
+  The project's test command (to trigger testing with something like Standard)
+  The project's git repository (where the project source can be found)
+  The project's keywords (basically, tags related to the project)
+  The project's license (this defaults to ISC - most open-source Node.js projects are MIT)
+
+2-npm install
+  install all dependencies in your project
+3-npm i express
+4-npm i nodemon
+  nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+5-npm i cors
+  CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+6-npm i morgan
+  Morgan is a middleware for node.js that logs HTTP requests and is commonly used in Express projects.
+7-npm i colors
+  The colors module is used to style and color the NodeJS console. It is a nice library for better interaction with your node.js project
+8-npm i dotenv
+  Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+  DotEnv is a lightweight npm package that automatically loads environment variables from a .env file into the process.env object.
+9-npm i mongodb
+10-npm i mongoose
+ Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+11-npm i bcrypt
+12- npm i jsonwebtoken
+13 npm i moment in frontend 
+
+create folders
+1-models= for config purpose
+2-controller= for route
+3-routes
+4-config
+5-middleware
+6-utils
+
+MVC architecture
+
+creating environment
+-create .env extension global file
+-write port in .env file
+
+atlas
+atlas pass -GfNSRd8ognyxGCff
+new pass- Abhijitatlas123
+
+connecting atlas to compass
+
+in .env file
+MONGO_URL=mongodb+srv://abhijitmadavi:Abhijitatlas123@bloodbank.idwg3mc.mongodb.net/bloodbank
+
+in server.js
+call
+
+
+
+Inventory(create seprate files in  all folders for inventory / (a detailed list))
+ In inventery module we define schema of inventory like inventory type, blood groupe, quantity, organization, hospital, donar.
+
+enum :-
+ enums are basically used for restricting the values of a particular field in the schema. For example let us say you have a schema called userSchema and there you have a colum called usertype and you want only two types of user there “admin" and “normal", so then you will create an enum for it so that if someone tries to enter some other value apart from these two values, db will throw an error.
+
+ example- var userSchema = new mongooseSchema({ 
+              userType: { 
+                    type: String, 
+                    enum : ['normal','admin'], 
+                    default: 'normal' 
+                }, 
+            }) 
+
+1-create module for inventory (inventory schema )
+2-create rotes for inventory (routes for inventory)
+3-create controller for inventory (function wich contorl inventory writen in controller )
+
+-> postman creating inventory <-
+
+1-registor data of organisation in regiater page for organisation role
+2-form login page login for donar role with doanr email, password, and role
+3-after login, in current user, in headers write key-value pair of Autorization as a key and Bearer (token generate during login) as a value. it will fetch the user data 
+4-in create inventory api first in header again create key-value, Authorization as key and Bearer (token generated during login) as a value. After headers in Body-raw-type(JSON) write inventory data in body and post it. In body, value of donar is id created at the time of donar login and value of organisation is id created during registering data for organisation.
+
+
+date-19.07.23
+
+---->get request for geting inventory<----->
+- create get request in inventoryroute file for geting inventory
+- define function for get request name getInventorycontroller
+- create function getInventorycontroller in inventoryController file
+- .populate("") => 

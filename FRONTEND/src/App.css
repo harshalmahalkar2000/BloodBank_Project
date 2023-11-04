@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-banner img{
+  height: 100%;
+  width: 100%;
+}
+
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
